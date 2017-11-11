@@ -12,10 +12,23 @@
     <string name="mobile">Mobile</string>
     <string name="area">Area</string>
     <string name="submit">Submit</string>
+    <string name="press">Press me</string>
 
     <string name="e1">Example 1</string>
     <string name="e2">Example 2</string>
     <string name="e3">Example 3</string>
+    <string name="e4">Example 4</string>
+    <string name="e5">Example 5</string>
+    <string name="e6">Example 6</string>
+    <string name="e7">Example 7</string>
+    <string name="e8">Example 8</string>
+    <string name="e9">Example 9</string>
+    <string name="e10">Example 10</string>
+    <string name="e11">Example 11</string>
+    <string name="e12">Example 12</string>
+    <string name="e13">Example 13</string>
+    <string name="e14">Example 14</string>
+    <string name="e15">Example 15</string>
 
 
 </resources>

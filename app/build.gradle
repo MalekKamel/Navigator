@@ -4,7 +4,7 @@ android {
     compileSdkVersion 27
     buildToolsVersion "27.0.1"
     defaultConfig {
-        applicationId "com.sha.kamel.formvalidator.sample"
+        applicationId "com.sha.kamel.sample"
         minSdkVersion 15
         targetSdkVersion 27
         versionCode 1
@@ -36,10 +36,12 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
-    compile libraries.butterknife
-    compile libraries.butterknifeCompiler
+    implementation libraries.butterknife
+    implementation libraries.butterknifeCompiler
+    implementation libraries.parceler
+    annotationProcessor libraries.parcelerAnnotaitionProcessor
 
-    implementation project(':formvalidator')
+    implementation project(':navigator')
 
 
 }

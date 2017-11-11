@@ -1,21 +1,24 @@
 package com.sha.kamel.sample;
 
+import org.parceler.Parcel;
+
 /**
  * Created by Sha on 11/10/17.
  */
 
+@Parcel
 public class ClientInfo {
-    private String name;
-    private String age;
-    private String mobile;
-    private String area;
+     String name = "Shaban Kamel";
+     int age = 28;
+     String mobile = "01020485203";
+     String area = "Cairo";
 
     public ClientInfo setName(String name) {
         this.name = name;
         return this;
     }
 
-    public ClientInfo setAge(String age) {
+    public ClientInfo setAge(int age) {
         this.age = age;
         return this;
     }
@@ -28,5 +31,21 @@ public class ClientInfo {
     public ClientInfo setArea(String area) {
         this.area = area;
         return this;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public String getArea() {
+        return area;
     }
 }

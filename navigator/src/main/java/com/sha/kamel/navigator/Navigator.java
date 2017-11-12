@@ -31,7 +31,7 @@ public class Navigator implements NavigatorCallback {
     private int frameResource;
     private Object fragmentData;
     private String parcelableName;
-    private int startActivityForResultKey;
+    private int requestCode;
 
     public Navigator(Context context) {
         if (context == null) throw new RuntimeException("Context can't be null");
@@ -47,16 +47,16 @@ public class Navigator implements NavigatorCallback {
     }
 
     public void startActivityForResult(@NonNull Class<?> clazz) {
-        startActivityForResult(clazz, startActivityForResultKey);
+        startActivityForResult(clazz, requestCode);
     }
 
         @Override
     public void startActivityForResult(@NonNull Class<?> clazz, int key) {
-        this.startActivityForResultKey = key;
+        this.requestCode = key;
 
         Intent intent = new Intent(context,clazz);
         activityParcelable(intent);
-        ((Activity)context).startActivityForResult(intent, getStartActivityForResultKey());
+        ((Activity)context).startActivityForResult(intent, getRequestCode());
     }
 
     @Override
@@ -127,8 +127,8 @@ public class Navigator implements NavigatorCallback {
         return this;
     }
 
-    public Navigator startActivityForResultKey(int key){
-        startActivityForResultKey = key;
+    public Navigator requestCode(int key){
+        requestCode = key;
         return this;
     }
 
@@ -260,9 +260,9 @@ public class Navigator implements NavigatorCallback {
             throw new RuntimeException("FrameLayout resource must be provided.");
     }
 
-    private int getStartActivityForResultKey() {
-        if (startActivityForResultKey > 0)
-            return startActivityForResultKey;
+    private int getRequestCode() {
+        if (requestCode > 0)
+            return requestCode;
         return DEFAULT_START_ACTIVITY_FOR_RESULT_KEY;
     }
 

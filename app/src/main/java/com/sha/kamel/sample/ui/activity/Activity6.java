@@ -11,7 +11,7 @@ public class Activity6 extends BaseActivity {
         super.onCreate(savedInstanceState);
         setText("This is " + getClass().getSimpleName());
         addText("Started this activity for result");
-        addText("We used '.startActivityForResultKey(3)'");
+        addText("We used '.requestCode(3)'");
 
         btn_press.setVisibility(View.VISIBLE);
     }

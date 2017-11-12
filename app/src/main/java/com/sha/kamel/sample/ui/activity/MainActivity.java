@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.btn_a6:
                 navigator
-                        .startActivityForResultKey(3)
+                        .requestCode(3)
                         .startActivityForResult(Activity6.class);
                 break;
 

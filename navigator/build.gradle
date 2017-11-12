@@ -5,15 +5,15 @@ ext {
     bintrayName = 'navigator'
 
     publishedGroupId = 'com.sha.kamel'
-    libraryName = 'Navigator'
-    artifact = 'android-navigator'
+    libraryName = 'navigator'
+    artifact = 'navigator'
 
     libraryDescription = 'A simple Android navigator.'
 
     siteUrl = 'https://github.com/ShabanKamell/android-navigator'
     gitUrl = 'https://github.com/ShabanKamell/android-navigator.git'
 
-    libraryVersion = '0.1.0'
+    libraryVersion = '0.4.0'
 
     developerId = 'shaban'
     developerName = 'shaban kamel'

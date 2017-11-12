@@ -11,7 +11,7 @@ dependencies {
 }
 ```
 
-Usage:
+# Usage:
 
 ```java
  public void onClick(View v) {

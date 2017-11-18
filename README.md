@@ -58,19 +58,19 @@ dependencies {
                 break;
 
             case R.id.btn_a8:
-                navigator.navigateToFragment(new Fragment1(), true);
+                navigator.navigateToFragment(new Fragment1(), true); // FrameLayout id is provided in Application class
                 break;
 
             case R.id.btn_a9:
                 navigator
                         .fragmentData(new ClientInfo())
-                        .navigateToFragment(new Fragment2(), true);
+                        .navigateToFragment(new Fragment2(), true); // FrameLayout id is provided in Application class
                 break;
 
             case R.id.btn_a10:
                 navigator
                         .parcelable(Parcels.wrap(new ClientInfo()))
-                        .navigateToFragment(new Fragment3(), true);
+                        .navigateToFragment(new Fragment3(), true); // FrameLayout id is provided in Application class
 
                 break;
 
@@ -78,7 +78,7 @@ dependencies {
                 navigator
                         .parcelable(Parcels.wrap(new ClientInfo()))
                         .parcelableName("my_parcelable")
-                        .navigateToFragment(new Fragment4(), true);
+                        .navigateToFragment(new Fragment4(), true); // FrameLayout id is provided in Application class
                 break;
 
             case R.id.btn_a12:
@@ -110,15 +110,10 @@ dependencies {
 // You can optionally put FrameLayout resource id in Applicaction class to replace fragemts to.
 // This enables you replace fragments without specifying the resource id each time.
 public final class MyApp extends Application {
-    private static Context context;
-    public static Context getContext(){
-        return context;
-    }
     @Override
     public void onCreate() {
         super.onCreate();
         NavigatorOptions.instance().frameLayoutResource = R.id.mainFrame;
-        context = getApplicationContext();
     }
 }
 ```

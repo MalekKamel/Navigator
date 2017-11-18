@@ -14,23 +14,6 @@ dependencies {
 # Usage:
 
 ```java
-// You can optinally put FrameLayout resource id in Applicaction class to replace fragemts to.
-// This enables you replace fragments without specifying the resource id each time.
-public final class MyApp extends Application {
-    private static Context context;
-    public static Context getContext(){
-        return context;
-    }
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        NavigatorOptions.instance().frameLayoutResource = R.id.mainFrame;
-        context = getApplicationContext();
-    }
-}
-```
-
-```java
  public void onClick(View v) {
 
         Navigator navigator =  new Navigator(this);
@@ -121,6 +104,23 @@ public final class MyApp extends Application {
                 break;
         }
     }
+```
+
+```java
+// You can optionally put FrameLayout resource id in Applicaction class to replace fragemts to.
+// This enables you replace fragments without specifying the resource id each time.
+public final class MyApp extends Application {
+    private static Context context;
+    public static Context getContext(){
+        return context;
+    }
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        NavigatorOptions.instance().frameLayoutResource = R.id.mainFrame;
+        context = getApplicationContext();
+    }
+}
 ```
 
 ### See 'app' module for the full code.

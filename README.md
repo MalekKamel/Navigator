@@ -14,7 +14,8 @@ dependencies {
 # Usage:
 
 ```java
-// You can optinally put FrameLayout resource id in Applicaction class to replace fragemts to. This enables you replace fragments without specifying the resource id each time.
+// You can optinally put FrameLayout resource id in Applicaction class to replace fragemts to.
+// This enables you replace fragments without specifying the resource id each time.
 public final class MyApp extends Application {
     private static Context context;
     public static Context getContext(){

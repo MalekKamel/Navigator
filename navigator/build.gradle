@@ -13,7 +13,7 @@ ext {
     siteUrl = 'https://github.com/ShabanKamell/android-navigator'
     gitUrl = 'https://github.com/ShabanKamell/android-navigator.git'
 
-    libraryVersion = '0.4.0'
+    libraryVersion = '0.6.0'
 
     developerId = 'shaban'
     developerName = 'shaban kamel'

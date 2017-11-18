@@ -43,5 +43,4 @@ dependencies {
 
     implementation project(':navigator')
 
-
 }

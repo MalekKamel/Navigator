@@ -7,11 +7,27 @@
 
 ```gradle
 dependencies {
-    compile 'com.sha.kamel:navigator:0.4.0@aar'
+    compile 'com.sha.kamel:navigator:0.5.0@aar'
 }
 ```
 
 # Usage:
+
+```java
+// You can optinally put FrameLayout resource id in Applicaction class to replace fragemts to. This enables you replace fragments without specifying the resource id each time.
+public final class MyApp extends Application {
+    private static Context context;
+    public static Context getContext(){
+        return context;
+    }
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        NavigatorOptions.instance().frameLayoutResource = R.id.mainFrame;
+        context = getApplicationContext();
+    }
+}
+```
 
 ```java
  public void onClick(View v) {

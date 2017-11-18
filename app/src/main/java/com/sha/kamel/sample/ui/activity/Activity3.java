@@ -15,6 +15,7 @@ public class Activity3 extends BaseActivity {
         ClientInfo info = parseParcelable("my_parcel");
         addText("Client name: ");
         addText(info.getName());
+
     }
 
 }

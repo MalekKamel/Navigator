@@ -21,7 +21,7 @@ import java.util.List;
  * Created by Sha on 4/1/17.
  */
 
-public class Navigator implements NavigatorCallback {
+public class Navigator {
     public static final String DEFAULT_PARCELABLE_NAME = "default_intent_parcelable";
     public static final int DEFAULT_START_ACTIVITY_FOR_RESULT_KEY = 1;
 
@@ -38,7 +38,6 @@ public class Navigator implements NavigatorCallback {
         this.context = context;
     }
 
-    @Override
     public void navigateToActivity(@NonNull Class<?> clazz) {
         Intent intent = new Intent(context,clazz);
         activityFlags(intent);
@@ -50,7 +49,6 @@ public class Navigator implements NavigatorCallback {
         startActivityForResult(clazz, requestCode);
     }
 
-        @Override
     public void startActivityForResult(@NonNull Class<?> clazz, int key) {
         this.requestCode = key;
 
@@ -59,12 +57,10 @@ public class Navigator implements NavigatorCallback {
         ((Activity)context).startActivityForResult(intent, getRequestCode());
     }
 
-    @Override
     public void navigateToFragment(Fragment fragment, boolean addToBackStack) {
         navigateToFragment(fragment, frameResource, addToBackStack);
     }
 
-    @Override
     public void navigateToFragment(Fragment fragment, int frameResource, boolean addToBackStack) {
         this.frameResource = frameResource;
         passFragmentData(fragment);
@@ -83,7 +79,6 @@ public class Navigator implements NavigatorCallback {
         ft.commit();
     }
 
-    @Override
     public void removeFragmentFromFrame(Fragment fragment) {
         ((FragmentActivity)context).getSupportFragmentManager()
                 .beginTransaction()
@@ -101,7 +96,6 @@ public class Navigator implements NavigatorCallback {
         );
     }
 
-    @Override
     public Navigator parcelable(Parcelable parcelable) {
         this.extraParcelable = parcelable;
         return this;
@@ -253,8 +247,8 @@ public class Navigator implements NavigatorCallback {
         if (frameResource > 0)
             return frameResource;
 
-        else if (NavigatorData.instance().frameLayoutResource > 0)
-            return NavigatorData.instance().frameLayoutResource;
+        else if (NavigatorOptions.instance().frameLayoutResource > 0)
+            return NavigatorOptions.instance().frameLayoutResource;
 
         else
             throw new RuntimeException("FrameLayout resource must be provided.");

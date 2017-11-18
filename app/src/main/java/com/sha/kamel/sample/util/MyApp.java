@@ -3,7 +3,7 @@ package com.sha.kamel.sample.util;
 import android.app.Application;
 import android.content.Context;
 
-import com.sha.kamel.navigator.NavigatorData;
+import com.sha.kamel.navigator.NavigatorOptions;
 import com.sha.kamel.sample.R;
 
 
@@ -22,7 +22,7 @@ public final class MyApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        NavigatorData.instance().frameLayoutResource = R.id.mainFrame;
+        NavigatorOptions.instance().frameLayoutResource = R.id.mainFrame;
 
         context = getApplicationContext();
 

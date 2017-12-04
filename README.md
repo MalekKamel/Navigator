@@ -7,7 +7,7 @@
 
 ```gradle
 dependencies {
-    compile 'com.sha.kamel:navigator:0.5.0@aar'
+    compile 'com.sha.kamel:navigator:0.8.3@aar'
 }
 ```
 

@@ -1,5 +1,5 @@
 # android-navigator
-[![Bintray](https://api.bintray.com/packages/shabankamel/android/navigator/images/download.svg) ](https://bintray.com/shabankamel/android/navigator/_latestVersion)
+[![Bintray Download](https://api.bintray.com/packages/shabankamel/android/navigator/images/download.svg) ](https://bintray.com/shabankamel/android/navigator/_latestVersion)
 
 [![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-Navigator-green.svg?style=flat )]( https://android-arsenal.com/details/1/6514 )
 

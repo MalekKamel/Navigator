@@ -3,8 +3,11 @@ package com.sha.kamel.navigator;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Parcelable;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
@@ -25,6 +28,7 @@ import java.util.List;
 public class Navigator {
     public static final String DEFAULT_PARCELABLE_NAME = "default_intent_parcelable";
     public static final int DEFAULT_START_ACTIVITY_FOR_RESULT_KEY = 1;
+    public static final int DEFAULT_OPEN_CAMERA_REQUEST = 2;
 
     private Context context;
     private Parcelable extraParcelable;
@@ -37,6 +41,23 @@ public class Navigator {
     public Navigator(Context context) {
         if (context == null) throw new RuntimeException("Context can't be null");
         this.context = context;
+    }
+
+    public void openInGooglePlay(){
+        openInGooglePlay(context.getPackageName());
+    }
+
+    public void openInGooglePlay(String packageName){
+        Intent intent = new Intent("android.intent.action.VIEW");
+        intent.setData(Uri.parse("market://details?id=" + packageName));
+        newTask();
+        navigateToActivity(intent);
+    }
+
+    public void navigateToActivity(Intent intent) {
+        activityFlags(intent);
+        activityParcelable(intent);
+        context.startActivity(intent);
     }
 
     public void navigateToActivity(@NonNull Class<?> clazz) {
@@ -62,6 +83,32 @@ public class Navigator {
         navigateToFragment(fragment, frameResource, addToBackStack);
     }
 
+    public void navigateToFragmentDelayed(
+            Fragment fragment,
+            boolean addToBackStack,
+            long delayMillis
+    ) {
+        new Handler().postDelayed(
+                () -> navigateToFragment(fragment, frameResource, addToBackStack),
+                delayMillis);
+
+    }
+
+    public void navigateToFragmentDelayed(
+            Fragment fragment,
+            boolean addToBackStack,
+            long delayMillis,
+            Func callbackAfterNavigation
+    ) {
+        new Handler().postDelayed(
+                () -> {
+                    navigateToFragment(fragment, frameResource, addToBackStack);
+                    callbackAfterNavigation.call();
+                },
+                delayMillis);
+
+    }
+
     public void replaceAndroidContent(Fragment fragment) {
         FragmentManager fm = ((FragmentActivity)context).getSupportFragmentManager();
         if (fm.findFragmentById(android.R.id.content) == null) {
@@ -84,7 +131,7 @@ public class Navigator {
         ft.replace(getFrameResource(),fragment,fragment.getClass().getSimpleName());
         if (addToBackStack)
             ft.addToBackStack(fragment.getClass().getSimpleName());
-        ft.commit();
+        ft.commitAllowingStateLoss();
     }
 
     public void removeFragmentFromFrame(Fragment fragment) {
@@ -92,6 +139,24 @@ public class Navigator {
                 .beginTransaction()
                 .remove(fragment)
                 .commit();
+    }
+
+    public void openCamera(Fragment fragment){
+        startCamera(fragment);
+    }
+
+    public void openCamera(){
+        startCamera(null);
+    }
+
+    private void startCamera(Fragment fragment) {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePictureIntent.resolveActivity(context.getPackageManager()) != null) {
+            if (fragment == null)
+                ((Activity)context).startActivityForResult(takePictureIntent, DEFAULT_OPEN_CAMERA_REQUEST);
+            else
+                fragment.startActivityForResult(takePictureIntent, DEFAULT_OPEN_CAMERA_REQUEST);
+        }
     }
 
     public void showDialogFragment(DialogFragment dialog){

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Parcelable;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
@@ -64,6 +65,42 @@ public class Navigator {
         Intent intent = new Intent(context,clazz);
         activityFlags(intent);
         activityParcelable(intent);
+        context.startActivity(intent);
+    }
+
+    public void navigateToActivityDelayed(
+            @NonNull Class<?> clazz,
+            long delayMillis,
+            Func callbackAfterNavigation
+    ) {
+        new Handler().postDelayed(
+                () -> {
+                    navigateToActivity(clazz);
+                    callbackAfterNavigation.call();
+                },
+                delayMillis);
+    }
+
+    public void navigateToActivityDelayed(
+            @NonNull Class<?> clazz,
+            long delayMillis) {
+        new Handler().postDelayed(
+                () -> navigateToActivity(clazz),
+                delayMillis);
+    }
+
+    public void openGoogleMapApp(double lat1, double lng1, double lat2, double lng2){
+        String url = new StringBuilder()
+                .append("http://maps.google.com/maps?saddr=")
+                .append(lat1)
+                .append(",")
+                .append(lng1)
+                .append("&daddr=")
+                .append(lat2)
+                .append(",")
+                .append(lng2)
+                .toString();
+        Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(url));
         context.startActivity(intent);
     }
 
@@ -167,6 +204,18 @@ public class Navigator {
                 ((AppCompatActivity) context).getSupportFragmentManager(),
                 dialog.getClass().getSimpleName()
         );
+    }
+
+    public void navigateToSettings(){
+        Intent intent = new Intent(android.provider.Settings.ACTION_SETTINGS);
+        activityFlags(intent);
+        context.startActivity(intent);
+    }
+
+    public void navigateToOperatorSettings(){
+        Intent intent = new Intent(Settings.ACTION_NETWORK_OPERATOR_SETTINGS);
+        activityFlags(intent);
+        context.startActivity(intent);
     }
 
     public Navigator parcelable(Parcelable parcelable) {
@@ -287,7 +336,7 @@ public class Navigator {
     // Private methods ------------------------
 
     private void activityFlags(Intent intent) {
-        if (flags == null) return;
+        if (flags == null || flags.isEmpty()) return;
 
         for (int flag : flags){
             intent.addFlags(flag);

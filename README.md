@@ -4,7 +4,8 @@
 ##### Android navigation has many boilerplate code. But Navigator will help you get rid of all this boilerplate.
 ##### For example: 
 ##### 
-```javanew Navigator(this).navigateToFragment(new MyFragment(), true);
+```java
+new Navigator(this).navigateToFragment(new MyFragment(), true);
 ```
 ##### It's trivial!
 

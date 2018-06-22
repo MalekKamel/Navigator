@@ -14,7 +14,7 @@ new Navigator(this).navigateToFragment(new MyFragment(), true);
 
 ```gradle
 dependencies {
-    compile 'com.sha.kamel:navigator:1.0.0@aar'
+    implementation 'com.sha.kamel:navigator:1.0.0@aar'
 }
 ```
 

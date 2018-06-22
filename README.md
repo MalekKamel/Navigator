@@ -7,7 +7,7 @@
 ```java
 new Navigator(this).navigateToFragment(new MyFragment(), true);
 ```
-##### It's trivial!
+### It's trivial!
 
 
 # Installation

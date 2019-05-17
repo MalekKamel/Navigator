@@ -1,8 +1,8 @@
 
 
-# Android FormValidator
+# Android Navigator
 
-Powerful, simple and customizable EditText validator for Android.
+A wapper for Android navigation.
 
 [![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-Navigator-green.svg?style=flat )]( https://android-arsenal.com/details/1/6514 )
 

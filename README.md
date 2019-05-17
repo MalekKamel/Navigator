@@ -2,7 +2,7 @@
 
 # Android Navigator
 
-A wapper for Android navigation.
+A simple wrapper for Android navigation that saves you a lot of boilerplate code.
 
 [![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-Navigator-green.svg?style=flat )]( https://android-arsenal.com/details/1/6514 )
 

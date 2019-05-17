@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".ui.activity.MainActivity">
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,13 +19,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.activity.Activity1"/>
-        <activity android:name=".ui.activity.Activity2"/>
-        <activity android:name=".ui.activity.Activity3"/>
-        <activity android:name=".ui.activity.Activity4"/>
-        <activity android:name=".ui.activity.Activity5"/>
-        <activity android:name=".ui.activity.Activity6"/>
-        <activity android:name=".ui.activity.Activity7"/>
+        <activity android:name=".ui.ExampleActivity"/>
+        <activity android:name=".ui.ActivitiesDemoActivity"/>
+        <activity android:name=".ui.FragmentDemoActivity"/>
 
     </application>
 

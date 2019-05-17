@@ -13,7 +13,7 @@ public class NavigatorOptions {
 
     private NavigatorOptions() {}
 
-    public int frameLayoutResource;
+    public int frameLayoutId;
 
 
 }

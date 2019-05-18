@@ -4,7 +4,8 @@
 
 A simple wrapper for Android navigation that saves you a lot of boilerplate code.
 
-[![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-Navigator-green.svg?style=flat )]( https://android-arsenal.com/details/1/6514 )
+[![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-Navigator-green.svg?style=flat )]( https://android-arsenal.com/details/1/6514 ) [![](https://jitpack.io/v/ShabanKamell/Navigator.svg)](https://jitpack.io/#ShabanKamell/Navigator)
+
 
 ## Install
 

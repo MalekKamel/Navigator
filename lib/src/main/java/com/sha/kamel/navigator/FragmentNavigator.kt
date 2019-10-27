@@ -20,7 +20,8 @@ class FragmentNavigator @JvmOverloads constructor(
      * @param fragment instance
      * @param addToBackStack flag
      */
-    fun add(fragment: Fragment, addToBackStack: Boolean) {
+    @JvmOverloads
+    fun add(fragment: Fragment, addToBackStack: Boolean = true) {
         navigate(fragment, addToBackStack, TransactionBehavior.ADD)
     }
 
@@ -34,7 +35,7 @@ class FragmentNavigator @JvmOverloads constructor(
     @JvmOverloads
     fun addDelayed(
             fragment: Fragment,
-            addToBackStack: Boolean,
+            addToBackStack: Boolean = true,
             delayMillis: Long,
             callbackAfterNavigation: (() -> Unit)? = null
     ) {
@@ -52,7 +53,8 @@ class FragmentNavigator @JvmOverloads constructor(
      * @param fragment instance
      * @param addToBackStack flag
      */
-    fun replace(fragment: Fragment, addToBackStack: Boolean) {
+    @JvmOverloads
+    fun replace(fragment: Fragment, addToBackStack: Boolean = true) {
         navigate(fragment, addToBackStack, TransactionBehavior.REPLACE)
     }
 
@@ -66,7 +68,7 @@ class FragmentNavigator @JvmOverloads constructor(
     @JvmOverloads
     fun replaceDelayed(
             fragment: Fragment,
-            addToBackStack: Boolean,
+            addToBackStack: Boolean = true,
             delayMillis: Long,
             callbackAfterNavigation: (() -> Unit)? = null
     ) {

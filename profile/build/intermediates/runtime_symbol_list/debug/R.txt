@@ -1,0 +1,2 @@
+int id tv 0x7e010000
+int layout profile 0x7e020000

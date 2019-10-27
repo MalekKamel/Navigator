@@ -1,1 +1,2 @@
-include ':app', ':navigator'
+include ':sample', ':lib'
+include ':profile'

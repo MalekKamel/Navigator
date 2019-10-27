@@ -1,0 +1,2 @@
+# Referenced at /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/build/intermediates/merged_manifests/debug/AndroidManifest.xml:20
+-keep class com.sha.navigator.profile.ProfileActivity { <init>(); }

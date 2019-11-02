@@ -30,65 +30,47 @@ dependencies {
 
 #### Replace Fragment
 ``` java
- new FragmentNavigator(this).replace(  
-        ExampleFragment.newInstance(),  
-        true // Add to back stack
- );
+ FragmentNavigator(this).replace(
+                    ExampleFragment.newInstance("Replaced"),
+                    true // add to back stack
+            )
 ```
 
 #### Add Fragment
 ``` java
- new FragmentNavigator(this, R.id.mainFrame).add(  
-        ExampleFragment.newInstance(),  
-        false
- );
-```
-#### Replace Fragment Delayed
-``` java
- new FragmentNavigator(this).replaceDelayed(  
-        ExampleFragment.newInstance(),  
-        true, 
-        1000  
- );
-```
-
-#### Add Fragment Delayed
-``` java
- new FragmentNavigator(this).addDelayed(  
-        ExampleFragment.newInstance(),  
-        true, 
-        1000  
- );
+ FragmentNavigator(this, R.id.mainFrame).add(
+                    ExampleFragment.newInstance("Added"),
+                    true
+            )
 ```
 
 #### Show DialogFragment
 ``` java
- new FragmentNavigator(this)  
-        .showDialogFragment(CustomerDialogFragment.newInstance());
+ FragmentNavigator(this)
+                    .showDialogFragment(
+                            CustomerDialogFragment.newInstance(CustomerInfo())
+                    )
 ```
 
 ### Where's FrameLayout's id?
 FrameLayout's id can be Provided with:
 ```java
-NavigatorOptions.instance().frameLayoutId = R.id.mainFrame;
+NavigatorOptions.frameLayoutId = R.id.mainFrame
 ```
 This id will be used every time you navigate not a fragment unless you specify one at call site.
 
 **Note**: The best approach is to add the id in Application class like this:
 ```java
-public final class MyApp extends Application {  
-  
-    @Override  
-  public void onCreate() {  
-      super.onCreate();  
-      NavigatorOptions.instance().frameLayoutId = R.id.mainFrame;  
-  }  
-  
+class SampleApp : Application() {
+    override fun onCreate() {
+        super.onCreate()
+        NavigatorOptions.frameLayoutId = R.id.mainFrame
+    }
 }
 ```
 Also, you can add the id at call site:
 ```java
- new  FragmentNavigator(this, R.id.mainFrame);
+   FragmentNavigator(this, R.id.mainFrame)
 ```
 
 ## Activity
@@ -97,65 +79,71 @@ Also, you can add the id at call site:
  new ActivityNavigator(this)  
         .navigate(ExampleActivity.class);
 ```
-#### Navigate to Activity Delayed
-``` java
- new ActivityNavigator(this)  
-        .navigateDelayed(ExampleActivity.class, 1000);
-```
 
 #### Start Activity For Result
 ``` java
- new ActivityNavigator(this)  
-        .startActivityForResult(ExampleActivity.class, 1);
+ ActivityNavigator(this).navigate(ExampleActivity::class.java)
 ```
 
 #### With Parcelable
 ``` java
- new ActivityNavigator(this)  
-        .withParcelable(Parcels.wrap(new Message("A message")), "message")  
-        .navigate(ExampleActivity.class);
+ActivityNavigator(this)
+                    .withParcelable(Parcels.wrap(Message("Navigated Immediately")), "message")
+                    .navigate(ExampleActivity::class.java)
 ```
 
 #### With Flags
 ``` java
- new ActivityNavigator(this)  
+  ActivityNavigator(this)  
         .withFlags(new Flags().newTask().singleTop())
-        .navigate(ExampleActivity.class);
+        .navigate(ExampleActivity.class)
         
         // OR
         
- new ActivityNavigator(this)  
+  ActivityNavigator(this)  
         .withFlags(Intent.FLAG_ACTIVITY_NEW_TASK, Intent.FLAG_ACTIVITY_SINGLE_TOP)
-        .navigate(ExampleActivity.class);
+        .navigate(ExampleActivity.class)
 ```
 
 #### Open App In Google Play
 ``` java
- new ActivityNavigator(this).openInGooglePlay();
+  ActivityNavigator(this).openInGooglePlay()
 ```
 
 #### Open Camera
 ``` java
- new ActivityNavigator(this).openCamera(2);
+  ActivityNavigator(this).openCamera(2)
 ```
 
 #### Open Settings
 ``` java
- new ActivityNavigator(this).navigateToSettings();
+  ActivityNavigator(this).navigateToSettings()
 ```
 
 #### Show Route In Google Map
 ``` java
  new ActivityNavigator(this).showRouteInGoogleMap(  
-        25.095549,  // lat1 
-        29.644703,  // lng1
-        24.457151,  // lat2
-        27.184841   // lng2
+        25.095549,  //  from lat
+        29.644703,  // from lng
+        24.457151,  // to lat
+        27.184841   // to lng
   );
 ```
 
-### See 'app' module for the full code.
+### See 'sample' module for the full code.
 
 ### License
 
- Apache license 2.0
+```
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```

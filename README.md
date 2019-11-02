@@ -73,8 +73,8 @@ FragmentModuleNavigator(this).replace(Profile)
  FragmentNavigator(this).showDialogFragment(CustomerDialogFragment.newInstance())
 ```
 
-### Where's FrameLayout's id?
-FrameLayout's id can be Provided with 2 ways:
+### Where's FrameLayout's ID?
+FrameLayout's ID can be Provided with 2 ways:
 #### 1- Pass in FragmentNavigator Contstructor
 
 ```java
@@ -82,7 +82,7 @@ FrameLayout's id can be Provided with 2 ways:
 ```
 
 #### 2- Provide only once  in Application class or anywhere
-
+In this case, you don't have to pass the ID in the constructor in every call.
 ```java
 class SampleApp : Application() {
     override fun onCreate() {
@@ -91,6 +91,7 @@ class SampleApp : Application() {
     }
 }
 ```
+Note: Passing the ID in the constructor will override the ID of `NavigatorOptions` only this call and won't change `NavigatorOptions`'s ID.
 
 ## Activity Navigation
 #### Navigate to Activity

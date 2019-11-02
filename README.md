@@ -23,10 +23,37 @@ dependencies {
 }
 
 ```
-(Please replace x, y and z with the latest version numbers:  [![](https://jitpack.io/v/ShabanKamell/Navigator.svg)](https://jitpack.io/#ShabanKamell/Navigator)
+(Please replace x, y and z with the latest version numbers:  [![](https://jitpack.io/v/ShabanKamell/Navigator.svg)](https://jitpack.io/#ShabanKamell/Navigator))
 
 
 # Usage
+
+## Modular Navigation
+
+Navigator supports Fragment/Activity navigation
+
+#### Activity
+```kotlin
+// Declare Addresable Activity
+object Profile: AddressableActivity {
+     override val className: String = "com.sha.navigator.profile.ProfileActivity"
+}
+// start Activity
+ActivityModuleNavigator(this, packageName).navigate(Profile)
+```
+
+#### Fragment
+
+```kotlin
+// Declare Addresable Fragment
+object Profile: AddressableFragment {
+     override val className: String = "com.sha.navigator.profile.ProfileFragment"
+}
+// Add Fragment
+FragmentModuleNavigator(this).add(Profile)
+// OR Replace Fragment
+FragmentModuleNavigator(this).replace(Profile)
+```
 
 ## Fragment Navigation
 
@@ -131,6 +158,9 @@ ActivityNavigator(this)
 ```
 
 ### See 'sample' module for the full code.
+
+## Credit
+[Plaid](https://github.com/android/plaid) Modular Navigation
 
 ### License
 

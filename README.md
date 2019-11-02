@@ -53,13 +53,15 @@ dependencies {
 ```
 
 ### Where's FrameLayout's id?
-FrameLayout's id can be Provided with:
-```java
-NavigatorOptions.frameLayoutId = R.id.mainFrame
-```
-This id will be used every time you navigate not a fragment unless you specify one at call site.
+FrameLayout's id can be Provided with 2 ways:
+#### 1- Pass in FragmentNavigator Contstructor
 
-**Note**: The best approach is to add the id in Application class like this:
+```java
+   FragmentNavigator(this, R.id.mainFrame)
+```
+
+#### 2- Provide only once  in Application class or anywhere
+
 ```java
 class SampleApp : Application() {
     override fun onCreate() {
@@ -67,10 +69,6 @@ class SampleApp : Application() {
         NavigatorOptions.frameLayoutId = R.id.mainFrame
     }
 }
-```
-Also, you can add the id at call site:
-```java
-   FragmentNavigator(this, R.id.mainFrame)
 ```
 
 ## Activity Navigation

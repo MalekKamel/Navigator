@@ -162,7 +162,7 @@ ActivityNavigator(this)
 ## Credit
 [Plaid](https://github.com/android/plaid) Modular Navigation
 
-### License
+# License
 
 ```
 Licensed under the Apache License, Version 2.0 (the "License");

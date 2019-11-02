@@ -1,0 +1,30 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    xmlns:dist="http://schemas.android.com/apk/distribution"
+4    featureSplit="profile"
+5    package="com.sha.kamel.sample"
+6    android:versionCode="1"
+7    android:versionName="1.0" >
+8
+9    <uses-sdk
+10        android:minSdkVersion="21"
+10-->/Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml
+11        android:targetSdkVersion="28" />
+11-->/Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml
+12
+13    <dist:module dist:onDemand="false" >
+13-->/Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:5:5-8:19
+13-->/Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:6:9-30
+14        <dist:fusing dist:include="true" />
+14-->/Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:7:9-44
+14-->/Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:7:22-41
+15    </dist:module>
+16
+17    <application>
+17-->/Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:10:5-12:19
+18        <activity android:name="com.sha.navigator.profile.ProfileActivity" />
+18-->/Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:11:9-77
+18-->/Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:11:19-75
+19    </application>
+20
+21</manifest>

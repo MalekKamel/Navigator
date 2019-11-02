@@ -44,28 +44,6 @@
                 android:layout_height="5dp" />
 
             <Button
-                android:id="@+id/btnAddFragmentDelayed"
-                android:text="Add Fragment after 1 second"
-                android:textAllCaps="false"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="5dp" />
-
-            <Button
-                android:id="@+id/btnReplaceFragmentDelayed"
-                android:text="Replace Fragment after 1 second"
-                android:textAllCaps="false"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="5dp" />
-
-            <Button
                 android:id="@+id/btnShowDialogFragment"
                 android:text="Show DialogFagment"
                 android:textAllCaps="false"

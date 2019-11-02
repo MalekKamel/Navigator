@@ -1,0 +1,53 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:1:1-14:12
+INJECTED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:1:1-14:12
+INJECTED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:1:1-14:12
+INJECTED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:1:1-14:12
+INJECTED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:1:1-14:12
+INJECTED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:1:1-14:12
+INJECTED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:1:1-14:12
+	package
+		ADDED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:3:5-40
+		INJECTED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml
+		INJECTED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml
+		ADDED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:1:1-14:12
+		INJECTED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml
+	xmlns:dist
+		ADDED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:2:5-61
+	android:versionCode
+		INJECTED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml
+		ADDED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:1:1-14:12
+		INJECTED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:1:11-69
+dist:module
+ADDED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:5:5-8:19
+	dist:onDemand
+		ADDED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:6:9-30
+dist:fusing
+ADDED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:7:9-44
+	dist:include
+		ADDED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:7:22-41
+application
+ADDED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:10:5-12:19
+activity#com.sha.navigator.profile.ProfileActivity
+ADDED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:11:9-77
+	android:name
+		ADDED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:11:19-75
+uses-sdk
+INJECTED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml
+INJECTED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml
+INJECTED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml
+INJECTED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml
+		ADDED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml
+		INJECTED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml
+		ADDED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml
+		INJECTED from /Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml

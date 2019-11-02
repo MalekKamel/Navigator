@@ -106,8 +106,6 @@ class Flags {
     fun addToIntent(intent: Intent) {
         if (flags == null || flags!!.isEmpty()) return
 
-        for (flag in flags!!) {
-            intent.addFlags(flag)
-        }
+        flags!!.forEach { intent.addFlags(it)  }
     }
 }

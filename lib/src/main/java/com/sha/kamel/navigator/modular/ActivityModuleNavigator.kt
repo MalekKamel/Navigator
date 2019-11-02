@@ -14,12 +14,14 @@ class ActivityModuleNavigator(
      */
     fun intentTo(addressableActivity: AddressableActivity): Intent {
         return Intent(Intent.ACTION_VIEW)
-                .setClassName(
-                        packageName,
-                        addressableActivity.className)
+                .setClassName(packageName, addressableActivity.className)
     }
 
+    /**
+     * @param addressableActivity container of the activity
+     */
     fun navigate(addressableActivity: AddressableActivity) {
         ActivityNavigator(activity).navigate(intentTo(addressableActivity))
     }
+
 }

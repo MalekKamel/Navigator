@@ -1,6 +1,5 @@
 package com.sha.kamel.navigator
 
-import android.os.Handler
 import androidx.annotation.IdRes
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
@@ -26,29 +25,6 @@ class FragmentNavigator @JvmOverloads constructor(
     }
 
     /**
-     * Add a fragment to Frame after delay time
-     * @param fragment instance
-     * @param addToBackStack flag
-     * @param delayMillis time to delay
-     * @param callbackAfterNavigation will be called after submitting navigation
-     */
-    @JvmOverloads
-    fun addDelayed(
-            fragment: Fragment,
-            addToBackStack: Boolean = true,
-            delayMillis: Long,
-            callbackAfterNavigation: (() -> Unit)? = null
-    ) {
-        navigateDelayed(
-                fragment,
-                addToBackStack,
-                delayMillis,
-                callbackAfterNavigation,
-                TransactionBehavior.ADD
-        )
-    }
-
-    /**
      * Replace a fragment in Frame
      * @param fragment instance
      * @param addToBackStack flag
@@ -57,46 +33,7 @@ class FragmentNavigator @JvmOverloads constructor(
     fun replace(fragment: Fragment, addToBackStack: Boolean = true) {
         navigate(fragment, addToBackStack, TransactionBehavior.REPLACE)
     }
-
-    /**
-     * Replace a fragment in Frame after delay time
-     * @param fragment instance
-     * @param addToBackStack flag
-     * @param delayMillis time to delay
-     * @param callbackAfterNavigation will be called after submitting navigation
-     */
-    @JvmOverloads
-    fun replaceDelayed(
-            fragment: Fragment,
-            addToBackStack: Boolean = true,
-            delayMillis: Long,
-            callbackAfterNavigation: (() -> Unit)? = null
-    ) {
-        navigateDelayed(
-                fragment,
-                addToBackStack,
-                delayMillis,
-                callbackAfterNavigation,
-                TransactionBehavior.REPLACE
-        )
-    }
-
-    private fun navigateDelayed(
-            fragment: Fragment,
-            addToBackStack: Boolean,
-            delayMillis: Long,
-            callbackAfterNavigation: (() -> Unit)? = null,
-            transactionBehavior: TransactionBehavior
-    ) {
-        Handler().postDelayed(
-                {
-                    navigate(fragment, addToBackStack, transactionBehavior)
-
-                    callbackAfterNavigation?.invoke()
-                },
-                delayMillis)
-    }
-
+    
     /**
      * Remove the Fragment
      * @param fragment instance
@@ -105,7 +42,7 @@ class FragmentNavigator @JvmOverloads constructor(
         activity.supportFragmentManager
                 .beginTransaction()
                 .remove(fragment)
-                .commit()
+                .commitAllowingStateLoss()
     }
 
     /**
@@ -115,7 +52,7 @@ class FragmentNavigator @JvmOverloads constructor(
     fun showDialogFragment(dialog: DialogFragment) {
         dialog.show(
                 activity.supportFragmentManager,
-                dialog.javaClass.simpleName
+                dialog.javaClass.name
         )
     }
 
@@ -130,18 +67,18 @@ class FragmentNavigator @JvmOverloads constructor(
             TransactionBehavior.ADD -> ft.add(
                     frameResourceId,
                     fragment,
-                    fragment.javaClass.simpleName
+                    fragment.javaClass.name
             )
 
             TransactionBehavior.REPLACE -> ft.replace(
                     frameResourceId,
                     fragment,
-                    fragment.javaClass.simpleName
+                    fragment.javaClass.name
             )
         }
 
         if (addToBackStack)
-            ft.addToBackStack(fragment.javaClass.simpleName)
+            ft.addToBackStack(fragment.javaClass.name)
 
         ft.commitAllowingStateLoss()
     }

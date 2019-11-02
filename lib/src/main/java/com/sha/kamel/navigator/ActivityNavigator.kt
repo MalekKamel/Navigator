@@ -3,7 +3,6 @@ package com.sha.kamel.navigator
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
-import android.os.Handler
 import android.os.Parcelable
 import android.provider.MediaStore
 import com.sha.kamel.navigator.model.Flags
@@ -33,43 +32,14 @@ class ActivityNavigator(private val activity: Activity) {
     }
 
     /**
-     * Navigate after a period of time
-     * @param clazz class of the activity
-     * @param delayMillis millis to delay
-     * @param callbackAfterNavigation called after navigation
+     * @param intent instance
+     * @param requestCode If >= 0, this code will be returned in
+     *                    onActivityResult() when the activity exits.
      */
-    @JvmOverloads
-    fun navigateDelayed(
-            clazz: Class<*>,
-            delayMillis: Long,
-            callbackAfterNavigation: (() -> Unit)? = null
-    ) {
-        Handler().postDelayed(
-                {
-                    navigate(clazz)
-                    callbackAfterNavigation?.invoke()
-                },
-                delayMillis)
-    }
-
-    /**
-     * Navigate after a period of time
-     * @param intent object
-     * @param delayMillis millis to delay
-     * @param callbackAfterNavigation called after navigation
-     */
-    @JvmOverloads
-    fun navigateDelayed(
-            intent: Intent,
-            delayMillis: Long,
-            callbackAfterNavigation: (() -> Unit)? = null
-    ) {
-        Handler().postDelayed(
-                {
-                    navigate(intent)
-                    callbackAfterNavigation?.invoke()
-                },
-                delayMillis)
+    fun startActivityForResult(intent: Intent, requestCode: Int) {
+        parcelableInfo.addToIntent(intent)
+        flags.addToIntent(intent)
+        activity.startActivityForResult(intent, requestCode)
     }
 
     /**
@@ -79,9 +49,7 @@ class ActivityNavigator(private val activity: Activity) {
      */
     fun startActivityForResult(clazz: Class<*>, requestCode: Int) {
         val intent = Intent(activity, clazz)
-        parcelableInfo.addToIntent(intent)
-        flags.addToIntent(intent)
-        activity.startActivityForResult(intent, requestCode)
+        startActivityForResult(intent, requestCode)
     }
 
     /**
@@ -137,7 +105,6 @@ class ActivityNavigator(private val activity: Activity) {
      */
     fun openCameraApp(requestCode: Int) {
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        if (intent.resolveActivity(activity.packageManager) == null) return
         flags.addToIntent(intent)
         activity.startActivityForResult(intent, requestCode)
     }

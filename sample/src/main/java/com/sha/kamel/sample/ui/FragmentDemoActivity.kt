@@ -27,22 +27,6 @@ class FragmentDemoActivity : AppCompatActivity() {
             )
         }
 
-        findViewById<Button>(R.id.btnAddFragmentDelayed).setOnClickListener {
-            FragmentNavigator(this).addDelayed(
-                    ExampleFragment.newInstance("Replaced after 1 second"),
-                    true,
-                    1000
-            )
-        }
-
-        findViewById<Button>(R.id.btnReplaceFragmentDelayed).setOnClickListener {
-            FragmentNavigator(this).replaceDelayed(
-                    ExampleFragment.newInstance("Replaced after 1 second"),
-                    true,
-                    1000
-            )
-        }
-
         findViewById<Button>(R.id.btnShowDialogFragment).setOnClickListener {
             FragmentNavigator(this)
                     .showDialogFragment(

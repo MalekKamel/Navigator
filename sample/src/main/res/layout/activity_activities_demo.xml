@@ -33,17 +33,6 @@
                 android:layout_height="5dp" />
 
             <Button
-                android:id="@+id/btnNavigateDelayed"
-                android:text="Navigate after 1 second"
-                android:textAllCaps="false"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="5dp" />
-
-            <Button
                 android:id="@+id/btnStartActivityForResult"
                 android:text="Start Activity For Result"
                 android:textAllCaps="false"

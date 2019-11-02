@@ -25,12 +25,6 @@ class ActivitiesDemoActivity : AppCompatActivity() {
                     .navigate(ExampleActivity::class.java)
         }
 
-        findViewById<View>(R.id.btnNavigateDelayed).setOnClickListener {
-            ActivityNavigator(this)
-                    .withParcelable(Parcels.wrap(Message("Navigated after 1 second")), "message")
-                    .navigateDelayed(ExampleActivity::class.java, 1000)
-        }
-
         findViewById<View>(R.id.btnStartActivityForResult).setOnClickListener {
             ActivityNavigator(this)
                     .withParcelable(Parcels.wrap(Message("Started for result")), "message")

@@ -107,7 +107,7 @@ class SampleApp : Application() {
 #### With Parcelable
 ``` java
 ActivityNavigator(this)
-                    .withParcelable(Parcels.wrap(Message("Navigated Immediately")), "message")
+                    .withParcelable(Parcels.wrap(Message()), "message")
                     .navigate(ExampleActivity::class.java)
 ```
 

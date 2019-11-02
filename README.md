@@ -51,7 +51,7 @@ object Profile: AddressableFragment {
 }
 // Add Fragment
 FragmentModuleNavigator(this).add(Profile)
-// Replace Fragment
+// OR Replace Fragment
 FragmentModuleNavigator(this).replace(Profile)
 ```
 
@@ -158,6 +158,9 @@ ActivityNavigator(this)
 ```
 
 ### See 'sample' module for the full code.
+
+## Credit
+(Plaid)[https://github.com/android/plaid] Modular Navigation
 
 ### License
 

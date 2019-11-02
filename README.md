@@ -19,10 +19,12 @@ allprojects {
 }
 
 dependencies {
-       implementation 'com.github.ShabanKamell:Navigator:1.2.0'
+       implementation 'com.github.ShabanKamell:Navigator:x.y.z'
 }
 
 ```
+(Please replace x, y and z with the latest version numbers:  [![](https://jitpack.io/v/ShabanKamell/Navigator.svg)](https://jitpack.io/#ShabanKamell/Navigator)
+
 
 # Usage
 

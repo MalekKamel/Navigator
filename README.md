@@ -49,8 +49,10 @@ ActivityModuleNavigator(this, packageName).navigate(Profile)
 object Profile: AddressableFragment {
      override val className: String = "com.sha.navigator.profile.ProfileFragment"
 }
-// start Activity
+// Add Fragment
 FragmentModuleNavigator(this).add(Profile)
+// Replace Fragment
+FragmentModuleNavigator(this).replace(Profile)
 ```
 
 ## Fragment Navigation

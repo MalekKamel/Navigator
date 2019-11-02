@@ -160,7 +160,7 @@ ActivityNavigator(this)
 ### See 'sample' module for the full code.
 
 ## Credit
-(Plaid)[https://github.com/android/plaid] Modular Navigation
+[Plaid](https://github.com/android/plaid) Modular Navigation
 
 ### License
 

@@ -26,7 +26,7 @@ dependencies {
 
 # Usage
 
-## Fragment
+## Fragment Navigation
 
 #### Replace Fragment
 ``` java
@@ -73,7 +73,7 @@ Also, you can add the id at call site:
    FragmentNavigator(this, R.id.mainFrame)
 ```
 
-## Activity
+## Activity Navigation
 #### Navigate to Activity
 ``` java
  new ActivityNavigator(this)  

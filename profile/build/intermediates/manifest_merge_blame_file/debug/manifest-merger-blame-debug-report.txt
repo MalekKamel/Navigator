@@ -20,13 +20,11 @@
 14-->/Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:7:22-41
 15    </dist:module>
 16
-17    <application
+17    <application android:debuggable="true" >
 17-->/Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:10:5-12:19
-18        android:debuggable="true"
-19        android:testOnly="true" >
-20        <activity android:name="com.sha.navigator.profile.ProfileActivity" />
-20-->/Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:11:9-77
-20-->/Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:11:19-75
-21    </application>
-22
-23</manifest>
+18        <activity android:name="com.sha.navigator.profile.ProfileActivity" />
+18-->/Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:11:9-77
+18-->/Users/mac/Desktop/android/projects/me/lib/Navigator/profile/src/main/AndroidManifest.xml:11:19-75
+19    </application>
+20
+21</manifest>

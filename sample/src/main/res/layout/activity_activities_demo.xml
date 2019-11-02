@@ -22,7 +22,7 @@
             >
 
             <Button
-                android:id="@+id/btnNavigateImmediately"
+                android:id="@+id/btnNavigate"
                 android:text="Navigate Immediately"
                 android:textAllCaps="false"
                 android:layout_width="match_parent"

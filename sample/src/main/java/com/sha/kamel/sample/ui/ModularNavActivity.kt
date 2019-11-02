@@ -16,7 +16,7 @@ class ModularNavActivity : AppCompatActivity() {
         setContentView(R.layout.activity_modular_nav)
 
         findViewById<Button>(R.id.btnShowActivityModular).setOnClickListener {
-            ActivityModuleNavigator(this, packageName).navigate(Activities.Profile);
+            ActivityModuleNavigator(this, packageName).navigate(Activities.Profile)
         }
 
         findViewById<Button>(R.id.btnShowFragmentModular).setOnClickListener {

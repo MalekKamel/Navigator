@@ -19,7 +19,7 @@ class ActivitiesDemoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_activities_demo)
 
-        findViewById<View>(R.id.btnNavigateImmediately).setOnClickListener {
+        findViewById<View>(R.id.btnNavigate).setOnClickListener {
             ActivityNavigator(this)
                     .withParcelable(Parcels.wrap(Message("Navigated Immediately")), "message")
                     .navigate(ExampleActivity::class.java)

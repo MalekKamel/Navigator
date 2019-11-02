@@ -9,10 +9,8 @@ import com.sha.kamel.navigator.NavigatorOptions
  */
 
 class SampleApp : Application() {
-
     override fun onCreate() {
         super.onCreate()
         NavigatorOptions.frameLayoutId = R.id.mainFrame
     }
-
 }

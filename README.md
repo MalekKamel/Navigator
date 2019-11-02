@@ -28,6 +28,31 @@ dependencies {
 
 # Usage
 
+## Modular Navigation
+
+Navigator supports Fragment/Activity navigation
+
+#### Activity
+```kotlin
+// Declare Addresable Activity
+object Profile: AddressableActivity {
+     override val className: String = "com.sha.navigator.profile.ProfileActivity"
+}
+// start Activity
+ActivityModuleNavigator(this, packageName).navigate(Profile)
+```
+
+#### Fragment
+
+```kotlin
+// Declare Addresable Fragment
+object Profile: AddressableFragment {
+     override val className: String = "com.sha.navigator.profile.ProfileFragment"
+}
+// start Activity
+FragmentModuleNavigator(this).add(Profile)
+```
+
 ## Fragment Navigation
 
 #### Replace Fragment

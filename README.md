@@ -95,8 +95,7 @@ class SampleApp : Application() {
 ## Activity Navigation
 #### Navigate to Activity
 ``` java
- new ActivityNavigator(this)  
-        .navigate(ExampleActivity.class);
+ new ActivityNavigator(this).navigate(ExampleActivity.class);
 ```
 
 #### Start Activity For Result

@@ -60,26 +60,17 @@ FragmentModuleNavigator(this).replace(Profile)
 
 #### Replace Fragment
 ``` java
- FragmentNavigator(this).replace(
-                    ExampleFragment.newInstance("Replaced"),
-                    true // add to back stack
-            )
+ FragmentNavigator(this).replace(ExampleFragment.newInstance()
 ```
 
 #### Add Fragment
 ``` java
- FragmentNavigator(this, R.id.mainFrame).add(
-                    ExampleFragment.newInstance("Added"),
-                    true
-            )
+ FragmentNavigator(this).add(ExampleFragment.newInstance())
 ```
 
 #### Show DialogFragment
 ``` java
- FragmentNavigator(this)
-                    .showDialogFragment(
-                            CustomerDialogFragment.newInstance(CustomerInfo())
-                    )
+ FragmentNavigator(this).showDialogFragment(CustomerDialogFragment.newInstance())
 ```
 
 ### Where's FrameLayout's id?

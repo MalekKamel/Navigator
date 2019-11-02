@@ -123,7 +123,7 @@ ActivityNavigator(this)
 #### Show Route In Google Map
 ``` java
  new ActivityNavigator(this).showRouteInGoogleMap(  
-        25.095549,  //  from lat
+        25.095549,  // from lat
         29.644703,  // from lng
         24.457151,  // to lat
         27.184841   // to lng

@@ -11,12 +11,12 @@ class ActivityModuleNavigator(
         private val packageName: String
 ) {
 
-    private val navigator = ActivityNavigator(activity)
+    internal var navigator = ActivityNavigator(activity)
 
     /**
      * Create an Intent with [Intent.ACTION_VIEW] to an [AddressableActivity].
      */
-    fun intentTo(addressableActivity: AddressableActivity): Intent {
+    fun intentTo(addressableActivity: AddressableActivity): Intent? {
         return Intent(Intent.ACTION_VIEW)
                 .setClassName(packageName, addressableActivity.className)
     }
@@ -26,8 +26,8 @@ class ActivityModuleNavigator(
      * @param addressableActivity container of the activity
      */
     fun navigate(addressableActivity: AddressableActivity) {
-        val intent = intentTo(addressableActivity)
-        navigator.navigate(intent)
+        val intent: Intent? = intentTo(addressableActivity)
+        navigator.navigate(intent!!)
     }
 
     /**

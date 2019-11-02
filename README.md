@@ -23,7 +23,7 @@ dependencies {
 }
 
 ```
-(Please replace x, y and z with the latest version numbers:  [![](https://jitpack.io/v/ShabanKamell/Navigator.svg)](https://jitpack.io/#ShabanKamell/Navigator)
+(Please replace x, y and z with the latest version numbers:  [![](https://jitpack.io/v/ShabanKamell/Navigator.svg)](https://jitpack.io/#ShabanKamell/Navigator))
 
 
 # Usage

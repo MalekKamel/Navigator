@@ -28,20 +28,20 @@ class ActivitiesDemoActivity : AppCompatActivity() {
         findViewById<View>(R.id.btnStartActivityForResult).setOnClickListener {
             ActivityNavigator(this)
                     .withParcelable(Parcels.wrap(Message("Started for result")), "message")
-                    .startActivityForResult(ExampleActivity::class.java, 1)
+                    .startActivityForResult(ExampleActivity::class.java, 1, this)
         }
 
         findViewById<View>(R.id.btnAddFlag).setOnClickListener {
             ActivityNavigator(this)
                     .withParcelable(Parcels.wrap(Message("Added new task & single top flags")), "message")
                     .withFlags(Flags().newTask().singleTop()) // OR
-                    //                      .withFlags(Intent.FLAG_ACTIVITY_NEW_TASK, Intent.FLAG_ACTIVITY_SINGLE_TOP)
+//                  .withFlags(Intent.FLAG_ACTIVITY_NEW_TASK, Intent.FLAG_ACTIVITY_SINGLE_TOP)
                     .navigate(ExampleActivity::class.java)
         }
 
         findViewById<View>(R.id.btnOpenInGooglePlay).setOnClickListener { ActivityNavigator(this).openInGooglePlay() }
 
-        findViewById<View>(R.id.btnOpenCamera).setOnClickListener { ActivityNavigator(this).openCameraApp(2) }
+        findViewById<View>(R.id.btnOpenCamera).setOnClickListener { ActivityNavigator(this).openCameraApp(this, 2) }
 
         findViewById<View>(R.id.btnOpenSettings).setOnClickListener { ActivityNavigator(this).navigateToSystemSettings() }
 

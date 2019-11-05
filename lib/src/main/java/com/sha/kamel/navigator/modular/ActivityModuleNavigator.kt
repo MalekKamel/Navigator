@@ -1,17 +1,18 @@
 package com.sha.kamel.navigator.modular
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Parcelable
 import com.sha.kamel.navigator.ActivityNavigator
 import com.sha.kamel.navigator.model.Flags
 
 class ActivityModuleNavigator(
-        activity: Activity,
+        context: Context,
         private val packageName: String
 ) {
 
-    internal var navigator = ActivityNavigator(activity)
+    internal var navigator = ActivityNavigator(context)
 
     /**
      * Create an Intent with [Intent.ACTION_VIEW] to an [AddressableActivity].

@@ -62,14 +62,14 @@ class ActivityNavigatorTest {
 
     @Test
     fun startActivityForResult_shouldCallStartActivityForResult() {
-        navigator.startActivityForResult(TestActivity::class.java, 1)
+        navigator.startActivityForResult(TestActivity::class.java, 1, activity)
         verify(activity).startActivityForResult(any(), any())
     }
 
     @Test
     fun startActivityForResultWithIntent_shouldCallStartActivityForResult() {
         val intent = Intent(context, TestActivity::class.java)
-        navigator.startActivityForResult(intent, 1)
+        navigator.startActivityForResult(intent, 1, activity)
         verify(activity).startActivityForResult(intent, 1)
     }
 
@@ -81,7 +81,7 @@ class ActivityNavigatorTest {
         navigator
                 .withParcelable(parcelable, "parcelable")
                 .withFlags(Flags().newTask().singleTop())
-                .startActivityForResult(intent, 1)
+                .startActivityForResult(intent, 1, activity)
 
         verify(activity).startActivityForResult(intent, 1)
 
@@ -118,7 +118,7 @@ class ActivityNavigatorTest {
 
     @Test
     fun openCameraApp_shouldCallStartActivity() {
-        navigator.openCameraApp(1)
+        navigator.openCameraApp(activity,1)
 
         verify(activity).startActivityForResult(any(), any())
     }

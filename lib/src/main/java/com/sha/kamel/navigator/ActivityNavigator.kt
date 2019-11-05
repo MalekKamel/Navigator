@@ -1,6 +1,7 @@
 package com.sha.kamel.navigator
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Parcelable
@@ -8,7 +9,7 @@ import android.provider.MediaStore
 import com.sha.kamel.navigator.model.Flags
 import com.sha.kamel.navigator.model.ParcelableInfo
 
-class ActivityNavigator(private val activity: Activity) {
+class ActivityNavigator(private val activity: Context) {
     private val parcelableInfo = ParcelableInfo()
     private var flags = Flags()
 
@@ -36,7 +37,7 @@ class ActivityNavigator(private val activity: Activity) {
      * @param requestCode If >= 0, this code will be returned in
      *                    onActivityResult() when the activity exits.
      */
-    fun startActivityForResult(intent: Intent, requestCode: Int) {
+    fun startActivityForResult(intent: Intent, requestCode: Int, activity: Activity) {
         parcelableInfo.addToIntent(intent)
         flags.addToIntent(intent)
         activity.startActivityForResult(intent, requestCode)
@@ -47,9 +48,9 @@ class ActivityNavigator(private val activity: Activity) {
      * @param requestCode If >= 0, this code will be returned in
      *                    onActivityResult() when the activity exits.
      */
-    fun startActivityForResult(clazz: Class<*>, requestCode: Int) {
+    fun startActivityForResult(clazz: Class<*>, requestCode: Int, activity: Activity) {
         val intent = Intent(activity, clazz)
-        startActivityForResult(intent, requestCode)
+        startActivityForResult(intent, requestCode, activity)
     }
 
     /**
@@ -103,7 +104,7 @@ class ActivityNavigator(private val activity: Activity) {
      * @param requestCode If >= 0, this code will be returned in
      *                    onActivityResult() when the activity exits.
      */
-    fun openCameraApp(requestCode: Int) {
+    fun openCameraApp(activity: Activity, requestCode: Int) {
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         flags.addToIntent(intent)
         activity.startActivityForResult(intent, requestCode)

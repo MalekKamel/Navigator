@@ -9,7 +9,7 @@ import android.provider.MediaStore
 import com.sha.kamel.navigator.model.Flags
 import com.sha.kamel.navigator.model.ParcelableInfo
 
-class ActivityNavigator(private val activity: Context) {
+class ActivityNavigator(private val context: Context) {
     private val parcelableInfo = ParcelableInfo()
     private var flags = Flags()
 
@@ -18,7 +18,7 @@ class ActivityNavigator(private val activity: Context) {
      * @param clazz type
      */
     fun navigate(clazz: Class<*>) {
-        val intent = Intent(activity, clazz)
+        val intent = Intent(context, clazz)
         navigate(intent)
     }
 
@@ -29,7 +29,7 @@ class ActivityNavigator(private val activity: Context) {
     fun navigate(intent: Intent) {
         flags.addToIntent(intent)
         parcelableInfo.addToIntent(intent)
-        activity.startActivity(intent)
+        context.startActivity(intent)
     }
 
     /**
@@ -86,7 +86,7 @@ class ActivityNavigator(private val activity: Context) {
                 .toString()
         val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
         flags.addToIntent(intent)
-        activity.startActivity(intent)
+        context.startActivity(intent)
     }
 
     /**
@@ -95,7 +95,7 @@ class ActivityNavigator(private val activity: Context) {
     fun navigateToSystemSettings() {
         val intent = Intent(android.provider.Settings.ACTION_SETTINGS)
         flags.addToIntent(intent)
-        activity.startActivity(intent)
+        context.startActivity(intent)
     }
 
 
@@ -115,7 +115,7 @@ class ActivityNavigator(private val activity: Context) {
      * @param packageName app's package
      */
     @JvmOverloads
-    fun openInGooglePlay(packageName: String = activity.packageName) {
+    fun openInGooglePlay(packageName: String = context.packageName) {
         val intent = Intent("android.intent.action.VIEW")
         intent.data = Uri.parse("market://details?id=$packageName")
         flags.newTask()

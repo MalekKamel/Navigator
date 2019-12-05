@@ -2,9 +2,9 @@
 
 # Android Navigator
 
-A simple wrapper for Android navigation that helps you get rid of a lot of boilerplate code.
-
 [![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-Navigator-green.svg?style=flat )]( https://android-arsenal.com/details/1/6514 ) [![](https://jitpack.io/v/ShabanKamell/Navigator.svg)](https://jitpack.io/#ShabanKamell/Navigator)
+
+A simple wrapper for Android navigation that helps you get rid of a lot of boilerplate code.
 
 <img src="https://github.com/ShabanKamell/Navigator/blob/master/blob/raw/logo.png" height="250">
 

@@ -48,12 +48,17 @@ class FragmentNavigator @JvmOverloads constructor(
     /**
      * Show a DialogFragment with a tag equal to the name of its class
      * @param dialog instance
+     * @param tag The tag for this fragment
+     */
+    fun showDialogFragment(dialog: DialogFragment, tag: String) {
+        dialog.show(activity.supportFragmentManager, tag)
+    }
+
+    /**
+     * Show a DialogFragment with a tag equal to the name of its class
      */
     fun showDialogFragment(dialog: DialogFragment) {
-        dialog.show(
-                activity.supportFragmentManager,
-                dialog.javaClass.name
-        )
+        showDialogFragment(dialog, dialog.javaClass.name)
     }
 
     private fun navigate(
